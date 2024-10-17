@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brute Force Attack - Hackers Hub</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Brute Force Attack</h1>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="missions.html">Missions</a>
+            <a href="leaderboard.html">Leaderboard</a>
+        </nav>
+    </header>
+
+    <section class="mission-section">
+        <h2>Perform a Brute Force Attack to Earn XP</h2>
+        <form id="brute-force-form" action="/brute_force" method="POST">
+            <label for="target-system">Target System IP/URL:</label>
+            <input type="url" id="target-system" name="target-system" placeholder="http://target.com" required>
+            <button type="submit" class="cta-button">Submit & Start Attack</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Hackers Hub. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        document.getElementById('brute-force-form').addEventListener('submit', (e) => {
+            e.preventDefault();
+            alert('Brute Force Attack successful! You earned 120,000 XP.');
+            completeMission('brute'); // Mark mission as completed
+            window.location.href = 'missions.html';
+        });
+    </script>
+</body>
+</html>

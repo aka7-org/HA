@@ -1,0 +1,150 @@
+/* General Body Styling */
+body {
+    background-color: #000000; /* Black background */
+    color: #00ff00; /* Neon green text */
+    font-family: 'Courier New', monospace;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+/* Header and Navigation */
+header {
+    background-color: rgba(0, 0, 0, 0.8);
+    text-align: center;
+    padding: 20px;
+    border-bottom: 3px solid #00ff00;
+    box-shadow: 0 0 15px rgba(0, 255, 0, 0.5);
+    animation: neonGlow 1.5s infinite alternate;
+}
+
+header h1 {
+    font-size: 48px;
+    margin: 0;
+    text-shadow: 0 0 20px #00ff00;
+    color: #00ff00;
+}
+
+header p {
+    font-size: 18px;
+    color: #00ffff;
+}
+
+nav {
+    margin-top: 10px;
+}
+
+nav a {
+    color: #00ff00;
+    text-decoration: none;
+    font-size: 18px;
+    margin: 0 10px;
+    padding: 10px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s, transform 0.3s;
+}
+
+nav a:hover {
+    background-color: #00ff00;
+    color: #000000;
+    transform: scale(1.1); /* Animation: Slight zoom on hover */
+}
+
+/* Section Styling */
+section {
+    padding: 50px;
+    text-align: center;
+    animation: fadeInUp 1s ease-out;
+}
+
+h2 {
+    font-size: 36px;
+    color: #ff3333;
+    text-shadow: 0 0 10px #ff3333;
+    margin-bottom: 20px;
+    animation: neonGlow 2s infinite alternate; /* Neon glow effect */
+}
+
+p {
+    font-size: 20px;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+ul li {
+    font-size: 22px;
+    padding: 10px;
+    margin: 10px 0;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-left: 5px solid #00ff00;
+    transition: background-color 0.3s, transform 0.3s;
+    animation: fadeInUp 1.5s ease-out;
+}
+
+ul li:hover {
+    background-color: rgba(0, 255, 0, 0.3);
+    transform: scale(1.05); /* Slight zoom effect */
+}
+
+/* Call to Action Button */
+.cta-button {
+    display: inline-block;
+    padding: 15px 30px;
+    background-color: #00ff00;
+    color: #000000;
+    text-decoration: none;
+    font-size: 20px;
+    border-radius: 5px;
+    transition: background-color 0.3s, box-shadow 0.3s, transform 0.3s;
+    animation: pulse 2s infinite alternate;
+}
+
+.cta-button:hover {
+    background-color: #00cc00;
+    box-shadow: 0 0 10px rgba(0, 255, 0, 0.5);
+    transform: scale(1.1); /* Slight scale on hover */
+}
+
+/* Footer Styling */
+footer {
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 20px;
+    text-align: center;
+    border-top: 3px solid #00ff00;
+    color: #00ff00;
+    animation: neonGlow 1.5s infinite alternate;
+}
+
+/* Animation Keyframes */
+@keyframes neonGlow {
+    0% {
+        text-shadow: 0 0 10px #00ff00, 0 0 20px #00ff00, 0 0 30px #00ff00;
+    }
+    100% {
+        text-shadow: 0 0 20px #00ff00, 0 0 30px #00ff00, 0 0 50px #00ff00;
+    }
+}
+
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes pulse {
+    0% {
+        box-shadow: 0 0 5px rgba(0, 255, 0, 0.5);
+    }
+    100% {
+        box-shadow: 0 0 20px rgba(0, 255, 0, 0.8);
+    }
+}

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DDoS Attack - Hackers Hub</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>DDoS Attack</h1>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="missions.html">Missions</a>
+            <a href="leaderboard.html">Leaderboard</a>
+        </nav>
+    </header>
+
+    <section class="mission-section">
+        <h2>Launch a DDoS Attack</h2>
+        <form id="ddos-form" action="/ddos_attack" method="POST">
+            <label for="target-server">Target Server URL/IP:</label>
+            <input type="url" id="target-server" name="target-server" placeholder="http://example.com" required>
+            <button type="submit" class="cta-button">Submit & Launch Attack</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Hackers Hub. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        document.getElementById('ddos-form').addEventListener('submit', (e) => {
+            e.preventDefault();
+            alert('DDoS Attack successful! You earned 90,000 XP.');
+            completeMission('ddos'); // Mark mission as completed
+            window.location.href = 'missions.html';
+        });
+    </script>
+</body>
+</html>

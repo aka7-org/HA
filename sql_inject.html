@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SQL Injection - Hackers Hub</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>SQL Injection Challenge</h1>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="missions.html">Missions</a>
+            <a href="leaderboard.html">Leaderboard</a>
+        </nav>
+    </header>
+
+    <section class="mission-section">
+        <h2>Input Target URL for SQL Injection</h2>
+        <form id="sql-inject-form" action="/sql_inject" method="POST">
+            <label for="target-url">Target URL:</label>
+            <input type="url" id="target-url" name="target-url" placeholder="http://example.com" required>
+            <button type="submit" class="cta-button">Submit URL & Inject SQL</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Hackers Hub. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        document.getElementById('sql-inject-form').addEventListener('submit', (e) => {
+            e.preventDefault();
+            alert('SQL Injection successful! You earned 100,000 XP.');
+            completeMission('sql'); // Mark mission as completed
+            window.location.href = 'missions.html';
+        });
+    </script>
+</body>
+</html>

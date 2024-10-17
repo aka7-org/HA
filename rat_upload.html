@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload a RAT - Hackers Hub</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Upload a RAT</h1>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="missions.html">Missions</a>
+            <a href="leaderboard.html">Leaderboard</a>
+        </nav>
+    </header>
+
+    <section class="mission-section">
+        <h2>Upload your RAT (.exe or .bat) to earn XP!</h2>
+        <form id="rat-upload-form" action="/upload_rat" method="POST" enctype="multipart/form-data">
+            <label for="rat-file">Choose a RAT File (.exe or .bat):</label>
+            <input type="file" id="rat-file" name="rat-file" accept=".exe,.bat" required>
+            <button type="submit" class="cta-button">Upload RAT</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Hackers Hub. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        document.getElementById('rat-upload-form').addEventListener('submit', (e) => {
+            e.preventDefault();
+            alert('RAT uploaded successfully! You earned 130,000 XP.');
+            completeMission('rat'); // Mark mission as completed (you'll need a cooldown function for this)
+            window.location.href = 'missions.html'; // Redirect back to the mission page
+        });
+    </script>
+</body>
+</html>

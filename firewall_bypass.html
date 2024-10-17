@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bypass Firewalls - Hackers Hub</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Bypass Firewalls</h1>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="missions.html">Missions</a>
+            <a href="leaderboard.html">Leaderboard</a>
+        </nav>
+    </header>
+
+    <section class="mission-section">
+        <h2>Submit the Target to Bypass the Firewall</h2>
+        <form id="firewall-bypass-form" action="/bypass_firewall" method="POST">
+            <label for="target-firewall">Firewall IP/URL:</label>
+            <input type="url" id="target-firewall" name="target-firewall" placeholder="http://firewall.com" required>
+            <button type="submit" class="cta-button">Submit & Bypass Firewall</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Hackers Hub. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        document.getElementById('firewall-bypass-form').addEventListener('submit', (e) => {
+            e.preventDefault();
+            alert('Firewall bypassed successfully! You earned 80,000 XP.');
+            completeMission('firewall'); // Mark mission as completed
+            window.location.href = 'missions.html';
+        });
+    </script>
+</body>
+</html>

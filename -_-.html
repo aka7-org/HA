@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - Hackers Hub</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Admin Dashboard</h1>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="missions.html">Missions</a>
+            <a href="leaderboard.html">Leaderboard</a>
+        </nav>
+    </header>
+
+    <section class="admin-section">
+
+        <h2>User Management</h2>
+        <p>Monitor and adjust user XP or reset mission cooldowns.</p>
+
+        <!-- User Management Section -->
+        <div class="admin-user-management">
+            <label for="user-id">User ID:</label>
+            <input type="text" id="user-id" name="user-id" placeholder="Enter User ID">
+            <button onclick="getUserDetails()" class="cta-button">Fetch User Data</button>
+
+            <div id="user-details">
+                <h3>User Data</h3>
+                <p>XP: <span id="user-xp">N/A</span></p>
+                <p>Level: <span id="user-level">N/A</span></p>
+                <button onclick="resetCooldown()" class="cta-button">Reset Cooldowns</button>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Hackers Hub. All Rights Reserved.</p>
+    </footer>
+
+    <script src="admin.js"></script>
+</body>
+</html>
