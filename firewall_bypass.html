@@ -3,10 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bypass Firewalls - Hackers Hub</title>
+    <title>Bypass Firewall - Hackers Hub</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <div class="bg-animation"></div>
+
     <header>
         <h1>Bypass Firewalls</h1>
         <nav>
@@ -17,24 +19,35 @@
     </header>
 
     <section class="mission-section">
-        <h2>Submit the Target to Bypass the Firewall</h2>
+        <h2>Bypass the Firewall to earn 80,000 XP!</h2>
         <form id="firewall-bypass-form" action="/bypass_firewall" method="POST">
             <label for="target-firewall">Firewall IP/URL:</label>
             <input type="url" id="target-firewall" name="target-firewall" placeholder="http://firewall.com" required>
             <button type="submit" class="cta-button">Submit & Bypass Firewall</button>
         </form>
+        <p id="cooldown-message"></p>
     </section>
 
     <footer>
         <p>&copy; 2024 Hackers Hub. All Rights Reserved.</p>
     </footer>
 
+    <script src="xp_system.js"></script>
     <script>
+        const missionKey = 'firewall';
+        const xpReward = 80000;
+
+        // Check if mission is in cooldown
+        if (isMissionInCooldown(missionKey)) {
+            document.getElementById('cooldown-message').innerText = "Mission is on cooldown. Try again in 24 hours.";
+            document.getElementById('firewall-bypass-form').style.display = 'none'; // Hide form
+        }
+
+        // Handle form submission
         document.getElementById('firewall-bypass-form').addEventListener('submit', (e) => {
             e.preventDefault();
-            alert('Firewall bypassed successfully! You earned 80,000 XP.');
-            completeMission('firewall'); // Mark mission as completed
-            window.location.href = 'missions.html';
+            alert('Firewall bypassed successfully!');
+            completeMission(missionKey, xpReward); // Complete the mission and reward XP
         });
     </script>
 </body>
