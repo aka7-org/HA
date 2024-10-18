@@ -7,6 +7,8 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <div class="bg-animation"></div>
+
     <header>
         <h1>SQL Injection Challenge</h1>
         <nav>
@@ -17,24 +19,35 @@
     </header>
 
     <section class="mission-section">
-        <h2>Input Target URL for SQL Injection</h2>
+        <h2>Perform SQL Injection to earn 100,000 XP!</h2>
         <form id="sql-inject-form" action="/sql_inject" method="POST">
             <label for="target-url">Target URL:</label>
             <input type="url" id="target-url" name="target-url" placeholder="http://example.com" required>
             <button type="submit" class="cta-button">Submit URL & Inject SQL</button>
         </form>
+        <p id="cooldown-message"></p>
     </section>
 
     <footer>
         <p>&copy; 2024 Hackers Hub. All Rights Reserved.</p>
     </footer>
 
+    <script src="xp_system.js"></script>
     <script>
+        const missionKey = 'sql';
+        const xpReward = 100000;
+
+        // Check if mission is in cooldown
+        if (isMissionInCooldown(missionKey)) {
+            document.getElementById('cooldown-message').innerText = "Mission is on cooldown. Try again in 24 hours.";
+            document.getElementById('sql-inject-form').style.display = 'none'; // Hide form
+        }
+
+        // Handle form submission
         document.getElementById('sql-inject-form').addEventListener('submit', (e) => {
             e.preventDefault();
-            alert('SQL Injection successful! You earned 100,000 XP.');
-            completeMission('sql'); // Mark mission as completed
-            window.location.href = 'missions.html';
+            alert('SQL Injection successful!');
+            completeMission(missionKey, xpReward); // Complete the mission and reward XP
         });
     </script>
 </body>
