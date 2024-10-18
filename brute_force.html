@@ -7,6 +7,8 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <div class="bg-animation"></div>
+
     <header>
         <h1>Brute Force Attack</h1>
         <nav>
@@ -17,24 +19,35 @@
     </header>
 
     <section class="mission-section">
-        <h2>Perform a Brute Force Attack to Earn XP</h2>
+        <h2>Perform a Brute Force Attack to earn 120,000 XP!</h2>
         <form id="brute-force-form" action="/brute_force" method="POST">
             <label for="target-system">Target System IP/URL:</label>
             <input type="url" id="target-system" name="target-system" placeholder="http://target.com" required>
             <button type="submit" class="cta-button">Submit & Start Attack</button>
         </form>
+        <p id="cooldown-message"></p>
     </section>
 
     <footer>
         <p>&copy; 2024 Hackers Hub. All Rights Reserved.</p>
     </footer>
 
+    <script src="xp_system.js"></script>
     <script>
+        const missionKey = 'brute';
+        const xpReward = 120000;
+
+        // Check if mission is in cooldown
+        if (isMissionInCooldown(missionKey)) {
+            document.getElementById('cooldown-message').innerText = "Mission is on cooldown. Try again in 24 hours.";
+            document.getElementById('brute-force-form').style.display = 'none'; // Hide form
+        }
+
+        // Handle form submission
         document.getElementById('brute-force-form').addEventListener('submit', (e) => {
             e.preventDefault();
-            alert('Brute Force Attack successful! You earned 120,000 XP.');
-            completeMission('brute'); // Mark mission as completed
-            window.location.href = 'missions.html';
+            alert('Brute Force Attack successful!');
+            completeMission(missionKey, xpReward); // Complete the mission and reward XP
         });
     </script>
 </body>
