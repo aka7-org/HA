@@ -7,6 +7,8 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <div class="bg-animation"></div>
+
     <header>
         <h1>DDoS Attack</h1>
         <nav>
@@ -17,24 +19,35 @@
     </header>
 
     <section class="mission-section">
-        <h2>Launch a DDoS Attack</h2>
+        <h2>Launch a DDoS Attack to earn 90,000 XP!</h2>
         <form id="ddos-form" action="/ddos_attack" method="POST">
             <label for="target-server">Target Server URL/IP:</label>
             <input type="url" id="target-server" name="target-server" placeholder="http://example.com" required>
             <button type="submit" class="cta-button">Submit & Launch Attack</button>
         </form>
+        <p id="cooldown-message"></p>
     </section>
 
     <footer>
         <p>&copy; 2024 Hackers Hub. All Rights Reserved.</p>
     </footer>
 
+    <script src="xp_system.js"></script>
     <script>
+        const missionKey = 'ddos';
+        const xpReward = 90000;
+
+        // Check if mission is in cooldown
+        if (isMissionInCooldown(missionKey)) {
+            document.getElementById('cooldown-message').innerText = "Mission is on cooldown. Try again in 24 hours.";
+            document.getElementById('ddos-form').style.display = 'none'; // Hide form
+        }
+
+        // Handle form submission
         document.getElementById('ddos-form').addEventListener('submit', (e) => {
             e.preventDefault();
-            alert('DDoS Attack successful! You earned 90,000 XP.');
-            completeMission('ddos'); // Mark mission as completed
-            window.location.href = 'missions.html';
+            alert('DDoS Attack launched successfully!');
+            completeMission(missionKey, xpReward); // Complete the mission and reward XP
         });
     </script>
 </body>
